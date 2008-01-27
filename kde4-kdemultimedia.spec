@@ -9,7 +9,6 @@ Summary(pl.UTF-8):   K Desktop Environment - aplikacje multimedialne
 Name:		kde4-multimedia
 Version:	4.0.0
 Release:	1
-Epoch:		9
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -70,9 +69,9 @@ Multimedialne aplikacje KDE. Pakiet zawiera:
 Summary:	Header files for kdemultimedia libraries
 Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek kdemultimedia
 Group:		X11/Development/Libraries
-Requires:	%{name}-arts = %{epoch}:%{version}-%{release}
-Requires:	%{name}-libkcddb = %{epoch}:%{version}-%{release}
-Requires:	%{name}-noatun-libs = %{epoch}:%{version}-%{release}
+Requires:	%{name}-arts = %{version}-%{release}
+Requires:	%{name}-libkcddb = %{version}-%{release}
+Requires:	%{name}-noatun-libs = %{version}-%{release}
 Requires:	kdelibs-devel >= %{_minlibsevr}
 Obsoletes:	kdemultimedia-static
 
@@ -86,7 +85,7 @@ Pliki nagłówkowe bibliotek kdemultimedia
 Summary:	Audiocd protocol for konqueror
 Summary(pl.UTF-8):   Protokół audiocd dla konquerora
 Group:		X11/Applications
-Requires:	%{name}-libkcddb = %{epoch}:%{version}-%{release}
+Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	konqueror >= %{_minbaseevr}
 Conflicts:	kdemultimedia-kaudiocreator < 9:3.1.92.031014
 
@@ -103,7 +102,7 @@ adresu.
 Summary:	CDDB library for KDE
 Summary(pl.UTF-8):   Biblioteka CDDB pod KDE
 Group:		X11/Applications
-Requires:	%{name}-libkcddb = %{epoch}:%{version}-%{release}
+Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	kdebase-core >= %{_minbaseevr}
 Conflicts:	kdemultimedia-libkcddb < 9:3.1.92.031014
 
@@ -182,7 +181,7 @@ Mikser dźwięku dla KDE.
 Summary:	KDE CD Player
 Summary(pl.UTF-8):   Odtwarzacz CD dla KDE
 Group:		X11/Applications
-Requires:	%{name}-libkcddb = %{epoch}:%{version}-%{release}
+Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	kdebase-core >= %{_minbaseevr}
 
 %description kscd
