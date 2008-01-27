@@ -47,7 +47,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 KDE multimedia applications. Package includes:
 
  - Arts - arts tools
- - Kaboodle - a media player,
  - KMID - MIDI player,
  - KMIDI - software MIDI player,
  - KMIX - audio mixer,
@@ -58,7 +57,6 @@ KDE multimedia applications. Package includes:
 Multimedialne aplikacje KDE. Pakiet zawiera:
 
  - Arts - narzędzia arts,
- - Kaboodle - odtwarzacz plików multimedialnych,
  - KMID - odtwarzacz MIDI,
  - KMIDI - programowy odtwarzacz MIDI,
  - KMIX - mikser audio,
@@ -161,9 +159,7 @@ tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
 dźwiękowych i zarządzanie kolekcją oraz playlistami. Obsługa bibliotek
 gstreamer została wyłączona w tej wersji pakietu. Aby ją uaktywnić,
 należy przebudować pakiet źródłowy (.src.rpm) z parametrem '--with
-gstreamer'. #%package kaboodle #Summary: Media player #Summary(pl):
-Odtwarzacz multimedialny #Group: X11/Applications #Requires:
-kdebase-core >= %{_minbaseevr} #Obsoletes: kdemultimedia-aktion
+gstreamer'.
 
 %package kmix
 Summary:	KDE audio mixer
