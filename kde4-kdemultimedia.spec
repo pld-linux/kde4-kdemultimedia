@@ -21,8 +21,8 @@ BuildRequires:	cdparanoia-III-devel
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	gettext-devel
 BuildRequires:	jack-audio-connection-kit-devel
-BuildRequires:	kdelibs4-devel >= %{_minlibsevr}
-BuildRequires:	kdebase4-workspace-devel
+BuildRequires:	kde4-kdelibs-devel >= %{_minlibsevr}
+BuildRequires:	kde4-kdebase-workspace-devel
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
 BuildRequires:	libjpeg-devel
@@ -40,13 +40,11 @@ BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	taglib-devel >= 0.95.031114
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	zlib-devel
-Obsoletes:	kdemultimedia-libworkman
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 KDE multimedia applications. Package includes:
 
- - Arts - arts tools
  - KMID - MIDI player,
  - KMIDI - software MIDI player,
  - KMIX - audio mixer,
@@ -56,7 +54,6 @@ KDE multimedia applications. Package includes:
 %description -l pl.UTF-8
 Multimedialne aplikacje KDE. Pakiet zawiera:
 
- - Arts - narzędzia arts,
  - KMID - odtwarzacz MIDI,
  - KMIDI - programowy odtwarzacz MIDI,
  - KMIX - mikser audio,
@@ -67,11 +64,8 @@ Multimedialne aplikacje KDE. Pakiet zawiera:
 Summary:	Header files for kdemultimedia libraries
 Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek kdemultimedia
 Group:		X11/Development/Libraries
-Requires:	%{name}-arts = %{version}-%{release}
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	%{name}-noatun-libs = %{version}-%{release}
-Requires:	kdelibs-devel >= %{_minlibsevr}
-Obsoletes:	kdemultimedia-static
+Requires:	kde4-kdelibs-devel >= %{_minlibsevr}
 
 %description devel
 Header files for kdemultimedia libraries.
@@ -85,7 +79,6 @@ Summary(pl.UTF-8):   Protokół audiocd dla konquerora
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	konqueror >= %{_minbaseevr}
-Conflicts:	kdemultimedia-kaudiocreator < 9:3.1.92.031014
 
 %description audiocd
 This package allows konqueror to play audiocd's without the need of an
@@ -101,8 +94,7 @@ Summary:	CDDB library for KDE
 Summary(pl.UTF-8):   Biblioteka CDDB pod KDE
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kdebase-core >= %{_minbaseevr}
-Conflicts:	kdemultimedia-libkcddb < 9:3.1.92.031014
+Requires:	kde4-kdebase-core >= %{_minbaseevr}
 
 %description cddb
 Support for cd database (CDDB), which is the source for track data for
@@ -117,7 +109,7 @@ ma CD-Text.
 Summary:	A jukebox like program
 Summary(pl.UTF-8):   Program spełniający funkcję szafy grającej
 Group:		X11/Applications
-Requires:	kdebase-core >= %{_minbaseevr}
+Requires:	kde4-kdebase-core >= %{_minbaseevr}
 Requires:	taglib >= 0.95.031114
 
 %description juk
@@ -165,7 +157,7 @@ gstreamer'.
 Summary:	KDE audio mixer
 Summary(pl.UTF-8):   Mikser dźwięku dla KDE
 Group:		X11/Applications
-Requires:	kdebase-core >= %{_minbaseevr}
+Requires:	kde4-kdebase-core >= %{_minbaseevr}
 
 %description kmix
 Sound mixer application for KDE.
@@ -178,7 +170,7 @@ Summary:	KDE CD Player
 Summary(pl.UTF-8):   Odtwarzacz CD dla KDE
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kdebase-core >= %{_minbaseevr}
+Requires:	kde4-kdebase-core >= %{_minbaseevr}
 
 %description kscd
 CD Player with CDDB support. It can automatically update its CD
@@ -194,7 +186,7 @@ graficzną interpretację granych dźwięków.
 Summary:	CDDB accessing library
 Summary(pl.UTF-8):   Biblioteka dostępu do baz CDDB
 Group:		X11/Libraries
-Requires:	kdelibs >= %{_minlibsevr}
+Requires:	kde4-kdelibs >= %{_minlibsevr}
 
 %description libkcddb
 Library for accessing CDDB (cd track information databases) services.
@@ -208,7 +200,7 @@ utworach).
 
 %build
 export QTDIR=%{_prefix}
-mkdir build
+install -d build
 cd build
 %cmake \
 -DCMAKE_INSTALL_PREFIX=%{_prefix} \
