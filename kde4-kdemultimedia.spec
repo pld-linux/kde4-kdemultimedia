@@ -6,7 +6,7 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):   K Desktop Environment - aplikacje multimedialne
 %define		orgname	kdemultimedia
-Name:		kde4-multimedia
+Name:		kde4-kdemultimedia
 Version:	4.0.0
 Release:	1
 License:	GPL
