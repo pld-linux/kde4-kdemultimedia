@@ -1,7 +1,5 @@
 #
 %define         _state          stable
-%define		_minlibsevr	9:4.0.0
-%define		_minbaseevr	9:4.0.0
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):   K Desktop Environment - aplikacje multimedialne
@@ -21,7 +19,7 @@ BuildRequires:	cdparanoia-III-devel
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	gettext-devel
 BuildRequires:	jack-audio-connection-kit-devel
-BuildRequires:	kde4-kdelibs-devel >= %{_minlibsevr}
+BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	kde4-kdebase-workspace-devel
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
@@ -65,7 +63,7 @@ Summary:	Header files for kdemultimedia libraries
 Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek kdemultimedia
 Group:		X11/Development/Libraries
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kde4-kdelibs-devel >= %{_minlibsevr}
+Requires:	kde4-kdelibs-devel
 
 %description devel
 Header files for kdemultimedia libraries.
@@ -186,7 +184,7 @@ graficzną interpretację granych dźwięków.
 Summary:	CDDB accessing library
 Summary(pl.UTF-8):   Biblioteka dostępu do baz CDDB
 Group:		X11/Libraries
-Requires:	kde4-kdelibs >= %{_minlibsevr}
+Requires:	kde4-kdelibs
 
 %description libkcddb
 Library for accessing CDDB (cd track information databases) services.
