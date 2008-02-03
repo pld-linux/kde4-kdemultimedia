@@ -10,7 +10,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-#% Source0-md5:	db69c9ab845c8295f095dc6394fba047
+# Source0-md5:	0bf1cd18a23017a37324d9f8c4902e19
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	autoconf
