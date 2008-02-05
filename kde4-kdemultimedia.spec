@@ -193,6 +193,18 @@ Library for accessing CDDB (cd track information databases) services.
 Biblioteka dostępu do serwisów CDDB (baz danych z informacjami o
 utworach).
 
+%package dragon
+Summary:        dragon
+Summary(pl.UTF-8):   dragon
+Group:          X11/Libraries
+Requires:       kde4-kdelibs >= %{version}
+
+%description dragon
+Dragon.
+
+%description dragon -l pl.UTF-8
+Dragon.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -293,3 +305,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkcddb.so.4.*.*
 %attr(755,root,root) %{_libdir}/libkcddb.so.4
 %attr(755,root,root) %{_libdir}/libkcddb.so
+
+%files dragon
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/dragon
+%attr(755,root,root) %{_libdir}/kde4/dragonpart.so
+%{_desktopdir}/kde4/dragonplayer.desktop
+%{_datadir}/apps/dragonplayer
+%{_datadir}/config/dragonplayerrc
+%{_iconsdir}/*/*/apps/dragonplayer.png
+%{_iconsdir}/*/*/actions/player-volume-muted.png
+%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
+%{_datadir}/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
+%{_datadir}/kde4/services/dragonplayer_part.desktop
+%{_datadir}/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
+%{_kdedocdir}/en/dragonplayer
