@@ -76,7 +76,7 @@ Summary:	Audiocd protocol for konqueror
 Summary(pl.UTF-8):	Protokół audiocd dla konquerora
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	konqueror >= %{version}
+Requires:	konqueror4 >= %{version}
 
 %description audiocd
 This package allows konqueror to play audiocd's without the need of an
