@@ -298,9 +298,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kio_audiocd.so
 %attr(755,root,root) %{_libdir}/kde4/libaudiocd_encoder*.so
 %attr(755,root,root) %{_libdir}/libaudiocdplugins.so.4.*.*
-%attr(755,root,root) %ghost %attr(755,root,root) %{_libdir}/libaudiocdplugins.so.?
+%attr(755,root,root) %ghost %{_libdir}/libaudiocdplugins.so.?
 %attr(755,root,root) %{_libdir}/libkcompactdisc.so.4.*.*
-%attr(755,root,root) %ghost %attr(755,root,root) %{_libdir}/libkcompactdisc.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkcompactdisc.so.?
 %{_datadir}/apps/kconf_update/upgrade-metadata.sh
 %{_datadir}/kde4/services/ServiceMenus/audiocd_play.desktop
 %{_datadir}/config.kcfg/audiocd_*_encoder.kcfg
@@ -351,7 +351,7 @@ rm -rf $RPM_BUILD_ROOT
 %files libkcddb
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkcddb.so.4.*.*
-%attr(755,root,root) %ghost %attr(755,root,root) %{_libdir}/libkcddb.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkcddb.so.?
 
 %files dragon
 %defattr(644,root,root,755)
