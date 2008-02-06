@@ -126,9 +126,13 @@ collection and playlists. JuK (pronounced jook) is a jukebox and music
 manager for the KDE desktop similar to jukebox software on other
 platforms such as iTunes(R) or RealOne(R). As is typical with many
 jukebox applications, JuK allows you to edit the "tags" of the audio
-files, and manage your collection and playlists. Gstreamer support in
-this version has been disabled. To reenable it please repuild the
-source rpm with '--with gstreamer' option.
+files, and manage your collection and playlists. JuK (pronounced jook)
+is a jukebox and music manager for the KDE desktop similar to jukebox
+software on other platforms such as iTunes(R) or RealOne(R). As is
+typical with many jukebox applications, JuK allows you to edit the
+"tags" of the audio files, and manage your collection and playlists.
+Gstreamer support in this version has been disabled. To reenable it
+please repuild the source rpm with '--with gstreamer' option.
 %endif
 
 %description juk -l pl.UTF-8
@@ -141,6 +145,10 @@ dźwiękowych i zarządzanie kolekcją oraz playlistami.
 Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki
 dla KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
 tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
+dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
+dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
+podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
+typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
 dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
 dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
 podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
@@ -158,6 +166,21 @@ dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
 dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
 podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
 typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
+dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
+dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
+podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
+typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
+dźwiękowych i zarządzanie kolekcją oraz playlistami. Obsługa
+bibliotek gstreamer została wyłączona w tej wersji pakietu. Aby ją
+uaktywnić, należy przebudować pakiet źródłowy (.src.rpm) z
+parametrem '--with gstreamer'. Juk (czyt. dżuk, jak w Jukebox) to
+szafa grająca i zarządca muzyki dla KDE podobny do iTunes(R) lub
+RealOne(R). Podobnie jak wiele innych tego typu aplikacji, JuK
+umożliwia modyfikowanie znaczników plików dźwiękowych i
+zarządzanie kolekcją oraz playlistami. Juk (czyt. dżuk, jak w
+Jukebox) to szafa grająca i zarządca muzyki dla KDE podobny do
+iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego typu
+aplikacji, JuK umożliwia modyfikowanie znaczników plików
 dźwiękowych i zarządzanie kolekcją oraz playlistami. Obsługa
 bibliotek gstreamer została wyłączona w tej wersji pakietu. Aby ją
 uaktywnić, należy przebudować pakiet źródłowy (.src.rpm) z
