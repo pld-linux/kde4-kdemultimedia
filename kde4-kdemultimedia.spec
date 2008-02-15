@@ -363,6 +363,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/apps/dragonplayer.png
 %{_iconsdir}/*/*/actions/player-volume-muted.png
 %{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
+%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
 %{_datadir}/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
 %{_datadir}/kde4/services/dragonplayer_part.desktop
 %{_datadir}/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
