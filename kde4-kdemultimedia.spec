@@ -1,13 +1,11 @@
-#
 %define         _state	unstable
-
 %define		orgname	kdemultimedia
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
 Version:	4.0.62
 Release:	0.1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	b645f4185a1400080575761b0a4dd7c7
@@ -16,6 +14,7 @@ BuildRequires:	audiofile-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
+BuildRequires:	cmake
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	gettext-devel
 BuildRequires:	jack-audio-connection-kit-devel
@@ -57,6 +56,19 @@ Multimedialne aplikacje KDE. Pakiet zawiera:
  - KMIX - mikser audio,
  - KSCD - odtwarzacz CD,
  - Noatun - odtwarzacz plików multimedialnych.
+
+%package libkcddb
+Summary:	CDDB accessing library
+Summary(pl.UTF-8):	Biblioteka dostępu do baz CDDB
+Group:		X11/Libraries
+Requires:	kde4-kdelibs >= %{version}
+
+%description libkcddb
+Library for accessing CDDB (cd track information databases) services.
+
+%description libkcddb -l pl.UTF-8
+Biblioteka dostępu do serwisów CDDB (baz danych z informacjami o
+utworach).
 
 %package devel
 Summary:	Header files for kdemultimedia libraries
@@ -103,6 +115,19 @@ Wsparcie dla baz danych płyt CD (CDDB) z których program ściąga
 informacje o odtwarzanym utworze (tytuł, autora itd.) jeśli płyta
 nie ma CD-Text.
 
+%package dragon
+Summary:	Dragon Player - very simple Phonon-based media player
+Summary(pl.UTF-8):	Dragon Player - bardzo prosty odtwarzacz multimediów oparty na Phononie
+Group:		X11/Libraries
+Requires:	kde4-kdelibs >= %{version}
+
+%description dragon
+Dragon Player - very simple Phonon-based media player.
+
+%description dragon -l pl.UTF-8
+Dragon Player - bardzo prosty odtwarzacz multimediów oparty na
+Phononie.
+
 %package juk
 Summary:	A jukebox like program
 Summary(pl.UTF-8):	Program spełniający funkcję szafy grającej
@@ -116,82 +141,12 @@ desktop similar to jukebox software on other platforms such as
 iTunes(R) or RealOne(R). As is typical with many jukebox applications,
 JuK allows you to edit the "tags" of the audio files, and manage your
 collection and playlists.
-%if %{without gstreamer}
-
-JuK (pronounced jook) is a jukebox and music manager for the KDE
-desktop similar to jukebox software on other platforms such as
-iTunes(R) or RealOne(R). As is typical with many jukebox applications,
-JuK allows you to edit the "tags" of the audio files, and manage your
-collection and playlists. JuK (pronounced jook) is a jukebox and music
-manager for the KDE desktop similar to jukebox software on other
-platforms such as iTunes(R) or RealOne(R). As is typical with many
-jukebox applications, JuK allows you to edit the "tags" of the audio
-files, and manage your collection and playlists. JuK (pronounced jook)
-is a jukebox and music manager for the KDE desktop similar to jukebox
-software on other platforms such as iTunes(R) or RealOne(R). As is
-typical with many jukebox applications, JuK allows you to edit the
-"tags" of the audio files, and manage your collection and playlists.
-Gstreamer support in this version has been disabled. To reenable it
-please repuild the source rpm with '--with gstreamer' option.
-%endif
 
 %description juk -l pl.UTF-8
 Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki
 dla KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
 tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
 dźwiękowych i zarządzanie kolekcją oraz playlistami.
-%if %{without gstreamer}
-
-Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki
-dla KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
-tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
-dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
-podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
-typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
-dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
-podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
-typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Obsługa
-bibliotek gstreamer została wyłączona w tej wersji pakietu. Aby ją
-uaktywnić, należy przebudować pakiet źródłowy (.src.rpm) z
-parametrem '--with gstreamer'.
-%endif
-
-Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki
-dla KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
-tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
-dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
-podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
-typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Juk (czyt.
-dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla KDE
-podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego
-typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Obsługa
-bibliotek gstreamer została wyłączona w tej wersji pakietu. Aby ją
-uaktywnić, należy przebudować pakiet źródłowy (.src.rpm) z
-parametrem '--with gstreamer'. Juk (czyt. dżuk, jak w Jukebox) to
-szafa grająca i zarządca muzyki dla KDE podobny do iTunes(R) lub
-RealOne(R). Podobnie jak wiele innych tego typu aplikacji, JuK
-umożliwia modyfikowanie znaczników plików dźwiękowych i
-zarządzanie kolekcją oraz playlistami. Juk (czyt. dżuk, jak w
-Jukebox) to szafa grająca i zarządca muzyki dla KDE podobny do
-iTunes(R) lub RealOne(R). Podobnie jak wiele innych tego typu
-aplikacji, JuK umożliwia modyfikowanie znaczników plików
-dźwiękowych i zarządzanie kolekcją oraz playlistami. Obsługa
-bibliotek gstreamer została wyłączona w tej wersji pakietu. Aby ją
-uaktywnić, należy przebudować pakiet źródłowy (.src.rpm) z
-parametrem '--with gstreamer'. Juk (czyt. dżuk, jak w Jukebox) to
-szafa grająca i zarządca muzyki dla KDE podobny do iTunes(R) lub
-RealOne(R). Podobnie jak wiele innych tego typu aplikacji, JuK
-umożliwia modyfikowanie znaczników plików dźwiękowych i
-zarządzanie kolekcją oraz playlistami. Obsługa bibliotek gstreamer
-została wyłączona w tej wersji pakietu. Aby ją uaktywnić, należy
-przebudować pakiet źródłowy (.src.rpm) z parametrem '--with
-gstreamer'.
 
 %package kmix
 Summary:	KDE audio mixer
@@ -221,31 +176,6 @@ sounds.
 Odtwarzacz CD z obsługą CDDB. Automatycznie uaktualnia swoją bazę
 danych o płytach CD z Internetem. Potrafi także wyświetlić ładną
 graficzną interpretację granych dźwięków.
-
-%package libkcddb
-Summary:	CDDB accessing library
-Summary(pl.UTF-8):	Biblioteka dostępu do baz CDDB
-Group:		X11/Libraries
-Requires:	kde4-kdelibs >= %{version}
-
-%description libkcddb
-Library for accessing CDDB (cd track information databases) services.
-
-%description libkcddb -l pl.UTF-8
-Biblioteka dostępu do serwisów CDDB (baz danych z informacjami o
-utworach).
-
-%package dragon
-Summary:	dragon
-Summary(pl.UTF-8):	dragon
-Group:		X11/Libraries
-Requires:	kde4-kdelibs >= %{version}
-
-%description dragon
-Dragon.
-
-%description dragon -l pl.UTF-8
-Dragon.
 
 %prep
 %setup -q -n %{orgname}-%{version}
@@ -283,6 +213,11 @@ rm -rf $RPM_BUILD_ROOT
 %post	audiocd		-p /sbin/ldconfig
 %postun	audiocd		-p /sbin/ldconfig
 
+%files libkcddb
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libkcddb.so.4.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkcddb.so.?
+
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/*.h
@@ -314,6 +249,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/libkcddb.kcfg
 %{_datadir}/apps/kconf_update/kcmcddb-emailsettings.upd
 %{_datadir}/kde4/services/libkcddb.desktop
+
+%files dragon
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/dragon
+%attr(755,root,root) %{_libdir}/kde4/dragonpart.so
+%{_datadir}/apps/dragonplayer
+%{_datadir}/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
+%{_datadir}/config/dragonplayerrc
+%{_datadir}/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
+%{_datadir}/kde4/services/dragonplayer_part.desktop
+%{_desktopdir}/kde4/dragonplayer.desktop
+%{_iconsdir}/*/*/apps/dragonplayer.png
+%{_iconsdir}/*/*/actions/player-volume-muted.png
+%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
+%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
+%{_kdedocdir}/en/dragonplayer
 
 %files juk -f juk.lang
 %defattr(644,root,root,755)
@@ -347,24 +298,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/kscd.kcfg
 %{_datadir}/apps/profiles/kscd.profile.xml
 %{_iconsdir}/*/*/*/kscd*.png
-
-%files libkcddb
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libkcddb.so.4.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkcddb.so.?
-
-%files dragon
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/dragon
-%attr(755,root,root) %{_libdir}/kde4/dragonpart.so
-%{_desktopdir}/kde4/dragonplayer.desktop
-%{_datadir}/apps/dragonplayer
-%{_datadir}/config/dragonplayerrc
-%{_iconsdir}/*/*/apps/dragonplayer.png
-%{_iconsdir}/*/*/actions/player-volume-muted.png
-%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
-%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-%{_datadir}/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
-%{_datadir}/kde4/services/dragonplayer_part.desktop
-%{_datadir}/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
-%{_kdedocdir}/en/dragonplayer
