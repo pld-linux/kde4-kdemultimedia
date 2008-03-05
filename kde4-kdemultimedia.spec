@@ -3,12 +3,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.0.62
+Version:	4.0.64
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	b645f4185a1400080575761b0a4dd7c7
+# Source0-md5:	29b4cfd09cc8116469836fbbf2ca209b
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	autoconf
@@ -18,8 +18,8 @@ BuildRequires:	cmake
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	gettext-devel
 BuildRequires:	jack-audio-connection-kit-devel
-BuildRequires:	kde4-kdebase-workspace-devel
-BuildRequires:	kde4-kdelibs-devel
+BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
+BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
 BuildRequires:	libjpeg-devel
