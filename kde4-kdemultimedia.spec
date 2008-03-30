@@ -285,6 +285,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdeinit4_kmixctrl.so
 %{_datadir}/apps/kmix
 %{_datadir}/autostart/restore_kmix_volumes.desktop
+%{_datadir}/autostart/kmix_autostart.desktop
 %{_datadir}/kde4/services/kmixctrl_restore.desktop
 %{_desktopdir}/kde4/kmix.desktop
 %{_iconsdir}/*/*/*/kmix.png
