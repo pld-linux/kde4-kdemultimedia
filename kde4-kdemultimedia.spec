@@ -131,7 +131,7 @@ Summary:	A jukebox like program
 Summary(pl.UTF-8):	Program spełniający funkcję szafy grającej
 Group:		X11/Applications
 Requires:	kde4-kdebase-core >= %{version}
-Requires:	taglib >= 0.95.031114
+Requires:	kde4-kdesupport-taglib >= %{version}
 
 %description juk
 JuK (pronounced jook) is a jukebox and music manager for the KDE
