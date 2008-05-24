@@ -11,8 +11,6 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	bc6f2b2de8d9c8ddb910b3fdbcbcbfdb
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	cdparanoia-III-devel
 BuildRequires:	cmake
 BuildRequires:	flac-devel >= 1.1.2
