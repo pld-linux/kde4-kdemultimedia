@@ -14,7 +14,6 @@ BuildRequires:	audiofile-devel
 BuildRequires:	cdparanoia-III-devel
 BuildRequires:	cmake
 BuildRequires:	flac-devel >= 1.1.2
-BuildRequires:	gettext-devel
 BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
