@@ -15,10 +15,14 @@ BuildRequires:	cdparanoia-III-devel
 BuildRequires:	cmake
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	jack-audio-connection-kit-devel
+BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
+BuildRequires:	kde4-kdesupport-taglib-devel  >= %{version}
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
+BuildRequires:	libcddb-devel
+BuildRequires:	libfreebob-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libmad-devel
 BuildRequires:	libmusicbrainz-devel >= 1:2.1.1
@@ -31,8 +35,10 @@ BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	kde4-kdesupport-taglib-devel >= %{version}
+BuildRequires:	speex-devel
 BuildRequires:	xine-lib-devel >= 1:1.0
+BuildRequires:	xorg-lib-libXpm-devel
+BuildRequires:	xorg-lib-libXv-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
