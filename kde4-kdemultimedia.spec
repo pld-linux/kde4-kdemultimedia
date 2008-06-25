@@ -36,7 +36,7 @@ BuildRequires:	libvorbis-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
-BuildRequires:	taglib-devel
+BuildRequires:	taglib-devel >= 1.5
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXv-devel
