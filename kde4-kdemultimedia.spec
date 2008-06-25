@@ -1,8 +1,6 @@
 %define         _state	unstable
 %define		orgname	kdemultimedia
 
-%define		supportver	4.0.81
-
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
@@ -21,7 +19,6 @@ BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	kde4-kdesupport-taglib-devel  >= %{supportver}
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
 BuildRequires:	libcddb-devel
@@ -39,6 +36,7 @@ BuildRequires:	libvorbis-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
+BuildRequires:	taglib-devel
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXv-devel
