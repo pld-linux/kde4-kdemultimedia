@@ -1,6 +1,8 @@
 %define         _state	unstable
 %define		orgname	kdemultimedia
 
+%define		_taglibver	1.5
+
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
@@ -36,7 +38,7 @@ BuildRequires:	libvorbis-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
-BuildRequires:	taglib-devel >= 1.5
+BuildRequires:	taglib-devel >= %{_taglibver}
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXv-devel
@@ -137,7 +139,7 @@ Summary:	A jukebox like program
 Summary(pl.UTF-8):	Program spełniający funkcję szafy grającej
 Group:		X11/Applications
 Requires:	kde4-kdebase-core >= %{version}
-Requires:	kde4-kdesupport-taglib >= %{suppportver}
+Requires:	taglib >= %{_taglibver}
 
 %description juk
 JuK (pronounced jook) is a jukebox and music manager for the KDE
