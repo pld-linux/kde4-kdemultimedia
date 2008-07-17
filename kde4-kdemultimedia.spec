@@ -188,7 +188,6 @@ graficzną interpretację granych dźwięków.
 %setup -q -n %{orgname}-%{version}
 
 %build
-export QTDIR=%{_prefix}
 install -d build
 cd build
 %cmake \
