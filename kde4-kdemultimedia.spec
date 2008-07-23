@@ -7,7 +7,7 @@ Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
 Version:	4.0.98
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -82,6 +82,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek kdemultimedia
 Group:		X11/Development/Libraries
 Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	kde4-kdelibs-devel >= %{version}
+Requires:	%{name}-audiocd >= %{version}
 
 %description devel
 Header files for kdemultimedia libraries.
