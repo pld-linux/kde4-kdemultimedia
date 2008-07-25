@@ -1,4 +1,4 @@
-%define         _state	unstable
+%define         _state	stable
 %define		orgname	kdemultimedia
 
 %define		taglib_ver	1.5
