@@ -128,6 +128,7 @@ Summary:	Dragon Player - very simple Phonon-based media player
 Summary(pl.UTF-8):	Dragon Player - bardzo prosty odtwarzacz multimediów oparty na Phononie
 Group:		X11/Libraries
 Requires:	kde4-kdelibs >= %{version}
+Requires:	kde4-kdebase-workspace-solid >= %{version}
 
 %description dragon
 Dragon Player - very simple Phonon-based media player.
@@ -265,6 +266,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/dragon
 %attr(755,root,root) %{_libdir}/kde4/dragonpart.so
 %{_datadir}/apps/dragonplayer
+%{_datadir}/apps/solid/actions/dragonplayer-opendvd.desktop
 %{_datadir}/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_datadir}/config/dragonplayerrc
 %{_datadir}/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
@@ -304,8 +306,7 @@ rm -rf $RPM_BUILD_ROOT
 %files kscd -f kscd.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kscd
-%attr(755,root,root) %{_bindir}/workman2cddb.pl
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
 %{_datadir}/apps/profiles/kscd.profile.xml
-%{_iconsdir}/*/*/*/kscd*.png
+#%{_iconsdir}/*/*/*/kscd*.png
