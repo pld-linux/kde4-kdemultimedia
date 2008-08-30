@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.1.63
+Version:	4.1.64
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	60b3f8b4eeea8b48610cd1a6e444a70b
+# Source0-md5:	3c0f4555cb59d8a7928415c13111aa71
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	cdparanoia-III-devel
@@ -313,3 +313,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kscd/skin
 %{_iconsdir}/hicolor/*/apps/kscd.png
 %{_iconsdir}/oxygen/*/actions/kscd-dock.png
+%{_datadir}/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
