@@ -310,7 +310,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
 %{_datadir}/apps/profiles/kscd.profile.xml
-%{_datadir}/apps/kscd/skin
+%{_datadir}/apps/kscd
 %{_iconsdir}/hicolor/*/apps/kscd.png
 %{_iconsdir}/oxygen/*/actions/kscd-dock.png
 %{_datadir}/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
