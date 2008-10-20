@@ -113,7 +113,7 @@ Summary:	CDDB library for KDE
 Summary(pl.UTF-8):	Biblioteka CDDB pod KDE
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description cddb
 Support for cd database (CDDB), which is the source for track data for
@@ -142,7 +142,7 @@ Phononie.
 Summary:	A jukebox like program
 Summary(pl.UTF-8):	Program spełniający funkcję szafy grającej
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Requires:	taglib >= %{taglib_ver}
 
 %description juk
@@ -162,7 +162,7 @@ dźwiękowych i zarządzanie kolekcją oraz playlistami.
 Summary:	KDE audio mixer
 Summary(pl.UTF-8):	Mikser dźwięku dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kmix
 Sound mixer application for KDE.
@@ -175,7 +175,7 @@ Summary:	KDE CD Player
 Summary(pl.UTF-8):	Odtwarzacz CD dla KDE
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kscd
 CD Player with CDDB support. It can automatically update its CD
