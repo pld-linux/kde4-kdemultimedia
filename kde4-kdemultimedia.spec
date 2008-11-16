@@ -277,7 +277,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/actions/player-volume-muted.png
 %{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
 %{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-%{_kdedocdir}/en/dragonplayer
 
 %files juk -f juk.lang
 %defattr(644,root,root,755)
