@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.1.82
+Version:	4.1.85
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	68f574e6c8f9841fa30a860f73162eb6
+# Source0-md5:	a2339f800000e2c3cc687a8535da6ed7
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	cdparanoia-III-devel
@@ -278,6 +278,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/actions/player-volume-muted.png
 %{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
 %{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
+%lang(en) %{_kdedocdir}/en/dragonplayer
 
 %files juk -f juk.lang
 %defattr(644,root,root,755)
