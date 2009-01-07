@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.1.87
+Version:	4.1.96
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	59aee5b228e8995432ace586e45feecf
+# Source0-md5:	98d66627f6ae4376b6415ed1ad23ded4
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	cdparanoia-III-devel
@@ -276,8 +276,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/dragonplayer.desktop
 %{_iconsdir}/*/*/apps/dragonplayer.png
 %{_iconsdir}/*/*/actions/player-volume-muted.png
-%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
-%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
+# FIXME: add -svg-icons subpackage like in kdebase-workspace and put the icons there
+#%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
+#%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
 %lang(en) %{_kdedocdir}/en/dragonplayer
 
 %files juk -f juk.lang
