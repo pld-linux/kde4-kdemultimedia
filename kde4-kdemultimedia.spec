@@ -6,16 +6,17 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.1.1
-Release:	0.1
+Version:	4.2.0
+Release:	3
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	efbf12cf33aafb13848fda258d001322
+# Source0-md5:	3e944c87888ac1ac5b11d3722dd31f88
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
+BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
-BuildRequires:	cmake
+BuildRequires:	cmake >= 2.6.2
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
@@ -35,6 +36,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtheora-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
+BuildRequires:	phonon-devel >= 4.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
@@ -112,7 +114,7 @@ Summary:	CDDB library for KDE
 Summary(pl.UTF-8):	Biblioteka CDDB pod KDE
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description cddb
 Support for cd database (CDDB), which is the source for track data for
@@ -128,6 +130,7 @@ Summary:	Dragon Player - very simple Phonon-based media player
 Summary(pl.UTF-8):	Dragon Player - bardzo prosty odtwarzacz multimediów oparty na Phononie
 Group:		X11/Libraries
 Requires:	kde4-kdelibs >= %{version}
+Requires:	kde4-kdebase-workspace-solid >= %{version}
 
 %description dragon
 Dragon Player - very simple Phonon-based media player.
@@ -140,7 +143,7 @@ Phononie.
 Summary:	A jukebox like program
 Summary(pl.UTF-8):	Program spełniający funkcję szafy grającej
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 Requires:	taglib >= %{taglib_ver}
 
 %description juk
@@ -160,7 +163,7 @@ dźwiękowych i zarządzanie kolekcją oraz playlistami.
 Summary:	KDE audio mixer
 Summary(pl.UTF-8):	Mikser dźwięku dla KDE
 Group:		X11/Applications
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kmix
 Sound mixer application for KDE.
@@ -173,7 +176,7 @@ Summary:	KDE CD Player
 Summary(pl.UTF-8):	Odtwarzacz CD dla KDE
 Group:		X11/Applications
 Requires:	%{name}-libkcddb = %{version}-%{release}
-Requires:	kde4-kdebase-core >= %{version}
+Requires:	kde4-kdebase >= %{version}
 
 %description kscd
 CD Player with CDDB support. It can automatically update its CD
@@ -252,6 +255,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/audiocd.upd
 %{_datadir}/kde4/services/audiocd.protocol
 %{_datadir}/kde4/services/audiocd.desktop
+%lang(en) %{_kdedocdir}/en/kioslave/audiocd
 
 %files cddb
 %defattr(644,root,root,755)
@@ -265,6 +269,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/dragon
 %attr(755,root,root) %{_libdir}/kde4/dragonpart.so
 %{_datadir}/apps/dragonplayer
+%{_datadir}/apps/solid/actions/dragonplayer-opendvd.desktop
 %{_datadir}/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 %{_datadir}/config/dragonplayerrc
 %{_datadir}/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
@@ -272,9 +277,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/dragonplayer.desktop
 %{_iconsdir}/*/*/apps/dragonplayer.png
 %{_iconsdir}/*/*/actions/player-volume-muted.png
-%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
-%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-%{_kdedocdir}/en/dragonplayer
+# FIXME: add -svg-icons subpackage like in kdebase-workspace and put the icons there
+#%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
+#%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
+%lang(en) %{_kdedocdir}/en/dragonplayer
 
 %files juk -f juk.lang
 %defattr(644,root,root,755)
@@ -304,8 +310,10 @@ rm -rf $RPM_BUILD_ROOT
 %files kscd -f kscd.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kscd
-%attr(755,root,root) %{_bindir}/workman2cddb.pl
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
 %{_datadir}/apps/profiles/kscd.profile.xml
-%{_iconsdir}/*/*/*/kscd*.png
+%{_datadir}/apps/kscd
+%{_iconsdir}/hicolor/*/apps/kscd.png
+%{_iconsdir}/oxygen/*/actions/kscd-dock.png
+%{_datadir}/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
