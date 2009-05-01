@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.2.2
+Version:	4.2.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	ebdf9ccc9eae935eda5f78d56773ee9a
+# Source0-md5:	5f34bb1467a015a524e3ecbdd05b167c
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
@@ -287,10 +287,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/juk
 %{_datadir}/apps/juk
-%{_datadir}/kde4/services/ServiceMenus/jukservicemenu.desktop
+#%{_datadir}/kde4/services/ServiceMenus/jukservicemenu.desktop
 %{_desktopdir}/kde4/juk.desktop
 %{_iconsdir}/*/*/*/juk*.png
-%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
+#%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
 
