@@ -16,7 +16,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
-BuildRequires:	cmake >= 2.6.2
+BuildRequires:	cmake >= 2.6.3
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
