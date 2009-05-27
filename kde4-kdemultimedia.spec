@@ -1,13 +1,3 @@
-# TODO:
-# package those files:
-# %{_bindir}/mplayerthumbsconfig
-# %{_libdir}/kde4/videopreview.so
-# %{_datadir}/apps/videothumbnail/sprocket-large.png
-# %{_datadir}/apps/videothumbnail/sprocket-medium.png
-# %{_datadir}/apps/videothumbnail/sprocket-small.png
-# %{_datadir}/config.kcfg/mplayerthumbs.kcfg
-# %{_datadir}/kde4/services/videopreview.desktop
-
 %define         _state	unstable
 %define		orgname	kdemultimedia
 %define		svn	969966
