@@ -200,6 +200,17 @@ Odtwarzacz CD z obsługą CDDB. Automatycznie uaktualnia swoją bazę
 danych o płytach CD z Internetem. Potrafi także wyświetlić ładną
 graficzną interpretację granych dźwięków.
 
+%package mplayerthumbs
+Summary:	Video thumbnail generator for KDE
+Summary(pl.UTF-8):	Generator podglądów video dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+Requires:	mplayer
+
+%description mplayerthumbs
+MPlayerThumbs is a video thumbnail generator for KDE file managers
+(Konqueror, Dolphin, ...) , now available also for KDE 4.
+
 %prep
 %setup -q -n %{orgname}-%{version}svn%{svn}
 
@@ -330,3 +341,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/apps/kscd.png
 %{_iconsdir}/oxygen/*/actions/kscd-dock.png
 %{_datadir}/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
+
+%files mplayerthumbs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/mplayerthumbsconfig
+%attr(755,root,root) %{_libdir}/kde4/videopreview.so
+%{_datadir}/apps/videothumbnail
+%{_datadir}/config.kcfg/mplayerthumbs.kcfg
+%{_datadir}/kde4/services/videopreview.desktop
