@@ -1,17 +1,29 @@
-%define         _state	stable
+# TODO:
+# package those files:
+# %{_bindir}/mplayerthumbsconfig
+# %{_libdir}/kde4/videopreview.so
+# %{_datadir}/apps/videothumbnail/sprocket-large.png
+# %{_datadir}/apps/videothumbnail/sprocket-medium.png
+# %{_datadir}/apps/videothumbnail/sprocket-small.png
+# %{_datadir}/config.kcfg/mplayerthumbs.kcfg
+# %{_datadir}/kde4/services/videopreview.desktop
+
+%define         _state	unstable
 %define		orgname	kdemultimedia
+%define		svn	969966
 
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.2.3
-Release:	3
+Version:	4.2.87
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	5f34bb1467a015a524e3ecbdd05b167c
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}svn%{svn}.tar.bz2
+# Source0-md5:	8fd18f27a4bd76ef9c4a42dbc98f44eb
+#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
@@ -82,9 +94,9 @@ utworach).
 Summary:	Header files for kdemultimedia libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek kdemultimedia
 Group:		X11/Development/Libraries
+Requires:	%{name}-audiocd >= %{version}
 Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	kde4-kdelibs-devel >= %{version}
-Requires:	%{name}-audiocd >= %{version}
 
 %description devel
 Header files for kdemultimedia libraries.
@@ -129,8 +141,8 @@ nie ma CD-Text.
 Summary:	Dragon Player - very simple Phonon-based media player
 Summary(pl.UTF-8):	Dragon Player - bardzo prosty odtwarzacz multimediów oparty na Phononie
 Group:		X11/Libraries
-Requires:	kde4-kdelibs >= %{version}
 Requires:	kde4-kdebase-workspace-solid >= %{version}
+Requires:	kde4-kdelibs >= %{version}
 
 %description dragon
 Dragon Player - very simple Phonon-based media player.
@@ -189,7 +201,7 @@ danych o płytach CD z Internetem. Potrafi także wyświetlić ładną
 graficzną interpretację granych dźwięków.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}svn%{svn}
 
 %build
 install -d build
@@ -251,7 +263,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkcompactdisc.so.4.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkcompactdisc.so.?
 %{_datadir}/apps/kconf_update/upgrade-metadata.sh
-%{_datadir}/kde4/services/ServiceMenus/audiocd_play.desktop
 %{_datadir}/config.kcfg/audiocd_*_encoder.kcfg
 %{_datadir}/apps/kconf_update/audiocd.upd
 %{_datadir}/kde4/services/audiocd.protocol
@@ -287,10 +298,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/juk
 %{_datadir}/apps/juk
-#%{_datadir}/kde4/services/ServiceMenus/jukservicemenu.desktop
+%{_datadir}/kde4/services/ServiceMenus/jukservicemenu.desktop
 %{_desktopdir}/kde4/juk.desktop
 %{_iconsdir}/*/*/*/juk*.png
-#%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
+%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
 
@@ -314,6 +325,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
 %{_datadir}/apps/profiles/kscd.profile.xml
+%{_datadir}/apps/solid/actions/kscd-play-audiocd.desktop
 %{_datadir}/apps/kscd
 %{_iconsdir}/hicolor/*/apps/kscd.png
 %{_iconsdir}/oxygen/*/actions/kscd-dock.png
