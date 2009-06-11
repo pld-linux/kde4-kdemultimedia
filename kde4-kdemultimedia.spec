@@ -1,18 +1,18 @@
 %define         _state	unstable
 %define		orgname	kdemultimedia
-%define		svn	973768
+%define		svn	979380
 
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.2.88
+Version:	4.2.91
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}svn%{svn}.tar.bz2
-# Source0-md5:	537de651389fd166698526c734037510
+# Source0-md5:	10e22ee0808d1e2a0a1d0c41a3352e6f
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
@@ -107,9 +107,9 @@ This package allows konqueror to play audiocd's without the need of an
 external application. Just enter audiocd:/ in the location field.
 
 %description audiocd -l pl.UTF-8
-Ten pakiet pozwala konquerorowi odtwarzanie płyt z muzyką bez
-potrzeby używania zewnętrznej aplikacji. Po prostu wpisz audiocd:/ w
-pole adresu.
+Ten pakiet pozwala konquerorowi odtwarzanie płyt z muzyką bez potrzeby
+używania zewnętrznej aplikacji. Po prostu wpisz audiocd:/ w pole
+adresu.
 
 %package cddb
 Summary:	CDDB library for KDE
@@ -124,8 +124,8 @@ KDE apps (title, author, etc.) when the cd does not have CD-Text.
 
 %description cddb -l pl.UTF-8
 Wsparcie dla baz danych płyt CD (CDDB) z których program ściąga
-informacje o odtwarzanym utworze (tytuł, autora itd.) jeśli płyta
-nie ma CD-Text.
+informacje o odtwarzanym utworze (tytuł, autora itd.) jeśli płyta nie
+ma CD-Text.
 
 %package dragon
 Summary:	Dragon Player - very simple Phonon-based media player
@@ -156,8 +156,8 @@ JuK allows you to edit the "tags" of the audio files, and manage your
 collection and playlists.
 
 %description juk -l pl.UTF-8
-Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki
-dla KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
+Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla
+KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
 tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
 dźwiękowych i zarządzanie kolekcją oraz playlistami.
 
