@@ -6,12 +6,13 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.2.4
+Version:	4.3.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	c35f9581401a13a7c14255d30066e75d
+# Source0-md5:	75c0c42f22f5ffc98262441751ccb247
+#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 %{?with_alsa:BuildRequires:	alsa-lib-devel}
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
@@ -82,9 +83,9 @@ utworach).
 Summary:	Header files for kdemultimedia libraries
 Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek kdemultimedia
 Group:		X11/Development/Libraries
+Requires:	%{name}-audiocd >= %{version}
 Requires:	%{name}-libkcddb = %{version}-%{release}
 Requires:	kde4-kdelibs-devel >= %{version}
-Requires:	%{name}-audiocd >= %{version}
 
 %description devel
 Header files for kdemultimedia libraries.
@@ -105,9 +106,9 @@ This package allows konqueror to play audiocd's without the need of an
 external application. Just enter audiocd:/ in the location field.
 
 %description audiocd -l pl.UTF-8
-Ten pakiet pozwala konquerorowi odtwarzanie płyt z muzyką bez
-potrzeby używania zewnętrznej aplikacji. Po prostu wpisz audiocd:/ w
-pole adresu.
+Ten pakiet pozwala konquerorowi odtwarzanie płyt z muzyką bez potrzeby
+używania zewnętrznej aplikacji. Po prostu wpisz audiocd:/ w pole
+adresu.
 
 %package cddb
 Summary:	CDDB library for KDE
@@ -122,15 +123,15 @@ KDE apps (title, author, etc.) when the cd does not have CD-Text.
 
 %description cddb -l pl.UTF-8
 Wsparcie dla baz danych płyt CD (CDDB) z których program ściąga
-informacje o odtwarzanym utworze (tytuł, autora itd.) jeśli płyta
-nie ma CD-Text.
+informacje o odtwarzanym utworze (tytuł, autora itd.) jeśli płyta nie
+ma CD-Text.
 
 %package dragon
 Summary:	Dragon Player - very simple Phonon-based media player
 Summary(pl.UTF-8):	Dragon Player - bardzo prosty odtwarzacz multimediów oparty na Phononie
 Group:		X11/Libraries
-Requires:	kde4-kdelibs >= %{version}
 Requires:	kde4-kdebase-workspace-solid >= %{version}
+Requires:	kde4-kdelibs >= %{version}
 
 %description dragon
 Dragon Player - very simple Phonon-based media player.
@@ -154,8 +155,8 @@ JuK allows you to edit the "tags" of the audio files, and manage your
 collection and playlists.
 
 %description juk -l pl.UTF-8
-Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki
-dla KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
+Juk (czyt. dżuk, jak w Jukebox) to szafa grająca i zarządca muzyki dla
+KDE podobny do iTunes(R) lub RealOne(R). Podobnie jak wiele innych
 tego typu aplikacji, JuK umożliwia modyfikowanie znaczników plików
 dźwiękowych i zarządzanie kolekcją oraz playlistami.
 
@@ -188,6 +189,17 @@ Odtwarzacz CD z obsługą CDDB. Automatycznie uaktualnia swoją bazę
 danych o płytach CD z Internetem. Potrafi także wyświetlić ładną
 graficzną interpretację granych dźwięków.
 
+%package mplayerthumbs
+Summary:	Video thumbnail generator for KDE
+Summary(pl.UTF-8):	Generator podglądów video dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+Requires:	mplayer
+
+%description mplayerthumbs
+MPlayerThumbs is a video thumbnail generator for KDE file managers
+(Konqueror, Dolphin, ...) , now available also for KDE 4.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -196,6 +208,7 @@ install -d build
 cd build
 %cmake \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DLIB_INSTALL_DIR=%{_libdir} \
 	-DCMAKE_BUILD_TYPE=%{!?debug:release}%{?debug:debug} \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64 \
@@ -251,7 +264,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkcompactdisc.so.4.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkcompactdisc.so.?
 %{_datadir}/apps/kconf_update/upgrade-metadata.sh
-%{_datadir}/kde4/services/ServiceMenus/audiocd_play.desktop
 %{_datadir}/config.kcfg/audiocd_*_encoder.kcfg
 %{_datadir}/apps/kconf_update/audiocd.upd
 %{_datadir}/kde4/services/audiocd.protocol
@@ -287,10 +299,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/juk
 %{_datadir}/apps/juk
-#%{_datadir}/kde4/services/ServiceMenus/jukservicemenu.desktop
+%{_datadir}/kde4/services/ServiceMenus/jukservicemenu.desktop
 %{_desktopdir}/kde4/juk.desktop
 %{_iconsdir}/*/*/*/juk*.png
-#%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
+%{_datadir}/dbus-1/interfaces/org.kde.juk.collection.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
 
@@ -314,7 +326,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
 %{_datadir}/apps/profiles/kscd.profile.xml
+%{_datadir}/apps/solid/actions/kscd-play-audiocd.desktop
 %{_datadir}/apps/kscd
 %{_iconsdir}/hicolor/*/apps/kscd.png
 %{_iconsdir}/oxygen/*/actions/kscd-dock.png
 %{_datadir}/dbus-1/interfaces/org.kde.kscd.cdplayer.xml
+
+%files mplayerthumbs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/mplayerthumbsconfig
+%attr(755,root,root) %{_libdir}/kde4/videopreview.so
+%{_datadir}/apps/videothumbnail
+%{_datadir}/config.kcfg/mplayerthumbs.kcfg
+%{_datadir}/kde4/services/videopreview.desktop
