@@ -1,17 +1,18 @@
-%define         _state	stable
+%define         _state	unstable
 %define		orgname	kdemultimedia
+%define         snap            svn1035674
 
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.3.2
+Version:	4.3.72
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	c32305e0d17198387a495e75f3d844ac
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
+# Source0-md5:	5d74b31fbbfeddf0e8dfb21484c73aa2
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
@@ -22,7 +23,7 @@ BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
+#BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
 BuildRequires:	libcddb-devel
@@ -201,7 +202,7 @@ MPlayerThumbs is a video thumbnail generator for KDE file managers
 (Konqueror, Dolphin, ...) , now available also for KDE 4.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}%{snap}
 
 %build
 install -d build
@@ -224,12 +225,12 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-%find_lang juk		--with-kde
+#%find_lang juk		--with-kde
 #%find_lang kio_audiocd	--with-kde
 #%find_lang kmid	--with-kde
-%find_lang kmix		--with-kde
+#%find_lang kmix		--with-kde
 #%find_lang kmixcfg	--with-kde
-%find_lang kscd		--with-kde
+#%find_lang kscd		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -268,6 +269,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/audiocd.upd
 %{_datadir}/kde4/services/audiocd.protocol
 %{_datadir}/kde4/services/audiocd.desktop
+%{_datadir}/apps/solid/actions/solid_audiocd.desktop
 %lang(en) %{_kdedocdir}/en/kioslave/audiocd
 
 %files cddb
@@ -293,9 +295,9 @@ rm -rf $RPM_BUILD_ROOT
 # FIXME: add -svg-icons subpackage like in kdebase-workspace and put the icons there
 #%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
 #%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-%lang(en) %{_kdedocdir}/en/dragonplayer
+#%lang(en) %{_kdedocdir}/en/dragonplayer
 
-%files juk -f juk.lang
+%files juk
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/juk
 %{_datadir}/apps/juk
@@ -306,7 +308,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
 
-%files kmix -f kmix.lang
+%files kmix
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kmix
 %attr(755,root,root) %{_bindir}/kmixctrl
@@ -320,7 +322,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/*/kmix.png
 %{_datadir}/dbus-1/interfaces/org.kde.KMix.xml
 
-%files kscd -f kscd.lang
+%files kscd
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kscd
 %{_desktopdir}/kde4/kscd.desktop
