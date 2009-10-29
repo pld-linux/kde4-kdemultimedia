@@ -1,18 +1,18 @@
-%define         _state	unstable
-%define		orgname	kdemultimedia
-%define         snap            svn1035674
+%define     _state      unstable
+%define		orgname     kdemultimedia
+%define     snap        svn1040395
 
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.3.72
+Version:	4.3.73
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	5d74b31fbbfeddf0e8dfb21484c73aa2
+# Source0-md5:	6d4d8cbfb7e91526317e2e14ae91ebe7
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
@@ -225,12 +225,12 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-#%find_lang juk		--with-kde
+%find_lang juk		--with-kde
 #%find_lang kio_audiocd	--with-kde
 #%find_lang kmid	--with-kde
-#%find_lang kmix		--with-kde
+%find_lang kmix		--with-kde
 #%find_lang kmixcfg	--with-kde
-#%find_lang kscd		--with-kde
+%find_lang kscd		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -295,9 +295,9 @@ rm -rf $RPM_BUILD_ROOT
 # FIXME: add -svg-icons subpackage like in kdebase-workspace and put the icons there
 #%{_iconsdir}/*/scalable/actions/player-volume-muted.svgz
 #%{_iconsdir}/hicolor/scalable/apps/dragonplayer.svgz
-#%lang(en) %{_kdedocdir}/en/dragonplayer
+%lang(en) %{_kdedocdir}/en/dragonplayer
 
-%files juk
+%files juk -f juk.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/juk
 %{_datadir}/apps/juk
@@ -308,7 +308,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.kde.juk.player.xml
 %{_datadir}/dbus-1/interfaces/org.kde.juk.search.xml
 
-%files kmix
+%files kmix -f kmix.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kmix
 %attr(755,root,root) %{_bindir}/kmixctrl
@@ -322,7 +322,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/*/kmix.png
 %{_datadir}/dbus-1/interfaces/org.kde.KMix.xml
 
-%files kscd
+%files kscd -f kscd.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kscd
 %{_desktopdir}/kde4/kscd.desktop
