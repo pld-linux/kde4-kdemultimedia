@@ -1,18 +1,18 @@
 %define     _state      unstable
 %define		orgname     kdemultimedia
-%define     snap        svn1040395
+%define     snap        svn1048496
 
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.3.73
+Version:	4.3.75
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	6d4d8cbfb7e91526317e2e14ae91ebe7
+# Source0-md5:	52475151d5112d418b070de571da78c3
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
