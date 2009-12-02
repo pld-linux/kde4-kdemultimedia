@@ -13,6 +13,9 @@ Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	4fa908d0215051e11b6972537cda6333
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+BuildRequires:	Qt3Support-devel
+BuildRequires:	QtSvg-devel
+BuildRequires:	QtTest-devel
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
@@ -39,6 +42,8 @@ BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	phonon-devel >= 4.3.1
 BuildRequires:	pkgconfig
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
 BuildRequires:	taglib-devel >= %{taglib_ver}
