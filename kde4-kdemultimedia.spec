@@ -7,13 +7,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.3.75
+Version:	4.3.80
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	52475151d5112d418b070de571da78c3
-#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	1c7dd773cf3d961b7da4018cb9c546e0
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
@@ -38,7 +37,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtheora-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
-BuildRequires:	phonon-devel >= 4.3.1
+BuildRequires:	phonon-devel >= 4.3.2
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
@@ -202,7 +201,7 @@ MPlayerThumbs is a video thumbnail generator for KDE file managers
 (Konqueror, Dolphin, ...) , now available also for KDE 4.
 
 %prep
-%setup -q -n %{orgname}-%{version}%{snap}
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
