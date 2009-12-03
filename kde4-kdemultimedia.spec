@@ -42,6 +42,7 @@ BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	phonon-devel >= 4.3.1
 BuildRequires:	pkgconfig
+BuildRequires:	pulseaudio-devel
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
