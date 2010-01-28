@@ -22,10 +22,8 @@ BuildRequires:	cdparanoia-III-devel
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	jack-audio-connection-kit-devel
-BuildRequires:	kde4-kdebase-devel >= %{version}
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-#BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
 BuildRequires:	libcddb-devel
