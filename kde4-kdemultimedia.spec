@@ -7,12 +7,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.3.95
+Version:	4.3.98
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	baeeb00f49238f9ecfdff6303f2d471c
+# Source0-md5:	e5a31e4a811909cb563acc7739b14fcb
 BuildRequires:	Qt3Support-devel
 BuildRequires:	QtSvg-devel
 BuildRequires:	QtTest-devel
