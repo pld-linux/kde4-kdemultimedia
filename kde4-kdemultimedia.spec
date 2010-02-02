@@ -1,7 +1,6 @@
-%define     _state      unstable
-%define		orgname     kdemultimedia
-%define     snap        svn1048496
-
+%define		_state		unstable
+%define		orgname		kdemultimedia
+%define		qtver		4.6.0
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
@@ -13,9 +12,9 @@ License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	e5a31e4a811909cb563acc7739b14fcb
-BuildRequires:	Qt3Support-devel
-BuildRequires:	QtSvg-devel
-BuildRequires:	QtTest-devel
+BuildRequires:	Qt3Support-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	QtTest-devel >= %{qtver}
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
@@ -41,8 +40,8 @@ BuildRequires:	libvorbis-devel
 BuildRequires:	phonon-devel >= 4.3.80
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
 BuildRequires:	taglib-devel >= %{taglib_ver}
