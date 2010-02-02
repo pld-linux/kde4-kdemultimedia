@@ -1,6 +1,6 @@
 %define		_state		unstable
 %define		orgname		kdemultimedia
-%define		qtver		4.6.0
+%define		qtver		4.6.1
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
