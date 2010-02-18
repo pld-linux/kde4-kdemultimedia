@@ -1,30 +1,28 @@
-%define         _state	stable
-%define		orgname	kdemultimedia
-
+%define		_state		stable
+%define		orgname		kdemultimedia
+%define		qtver		4.6.1
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.3.5
+Version:	4.4.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	08611f34d1779f1bf773962b4efa9d81
-#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-BuildRequires:	Qt3Support-devel
-BuildRequires:	QtSvg-devel
-BuildRequires:	QtTest-devel
+# Source0-md5:	b3c160790ddd06d64d833a8c9a85c164
+BuildRequires:	Qt3Support-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	QtTest-devel >= %{qtver}
 BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
-BuildRequires:	cmake >= 2.6.3
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
 BuildRequires:	lame
 BuildRequires:	lame-libs-devel
 BuildRequires:	libcddb-devel
@@ -39,11 +37,11 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtheora-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
-BuildRequires:	phonon-devel >= 4.3.1
+BuildRequires:	phonon-devel >= 4.3.80
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	speex-devel
 BuildRequires:	taglib-devel >= %{taglib_ver}
@@ -273,6 +271,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kconf_update/audiocd.upd
 %{_datadir}/kde4/services/audiocd.protocol
 %{_datadir}/kde4/services/audiocd.desktop
+%{_datadir}/apps/solid/actions/solid_audiocd.desktop
 %lang(en) %{_kdedocdir}/en/kioslave/audiocd
 
 %files cddb
