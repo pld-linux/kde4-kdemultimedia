@@ -15,26 +15,16 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
-BuildRequires:	audiofile-devel
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	flac-devel >= 1.1.2
-BuildRequires:	jack-audio-connection-kit-devel
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	lame
-BuildRequires:	lame-libs-devel
-BuildRequires:	libcddb-devel
-BuildRequires:	libfreebob-devel
-BuildRequires:	libjpeg-devel
-BuildRequires:	libmad-devel
 BuildRequires:	libmusicbrainz-devel >= 1:2.1.1
 BuildRequires:	libogg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	libsamplerate-devel
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtheora-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	phonon-devel >= 4.3.80
@@ -43,11 +33,9 @@ BuildRequires:	pulseaudio-devel
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	speex-devel
 BuildRequires:	taglib-devel >= %{taglib_ver}
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	xorg-lib-libXpm-devel
-BuildRequires:	xorg-lib-libXv-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
