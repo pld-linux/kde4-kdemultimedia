@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.4.1
+Version:	4.4.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	757a70465395512f245fac6f9e3b7c59
+# Source0-md5:	8b9ca4c67093e7b213270f65bbeb3cab
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
@@ -220,7 +220,7 @@ rm -rf $RPM_BUILD_ROOT
 #%find_lang kmid	--with-kde
 %find_lang kmix		--with-kde
 #%find_lang kmixcfg	--with-kde
-%find_lang kscd		--with-kde
+#%find_lang kscd		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -312,7 +312,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*/*/*/kmix.png
 %{_datadir}/dbus-1/interfaces/org.kde.KMix.xml
 
-%files kscd -f kscd.lang
+%files kscd
+# -f kscd.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kscd
 %{_desktopdir}/kde4/kscd.desktop
