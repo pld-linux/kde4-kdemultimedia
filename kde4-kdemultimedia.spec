@@ -1,4 +1,4 @@
-%define		_state		stable
+%define		_state		unstable
 %define		orgname		kdemultimedia
 %define		qtver		4.6.2
 %define		taglib_ver	1.5
@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.4.3
+Version:	4.4.80
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	cb1648e560f523a1bac6caf5574854be
+# Source0-md5:	bc5ca8a8f460de9b0fdd504c2c6bc225
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
@@ -27,7 +27,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
-BuildRequires:	phonon-devel >= 4.3.80
+BuildRequires:	phonon-devel >= 4.4.1
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
 BuildRequires:	qt4-build >= %{qtver}
@@ -268,6 +268,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/libkcddb.kcfg
 %{_datadir}/apps/kconf_update/kcmcddb-emailsettings.upd
 %{_datadir}/kde4/services/libkcddb.desktop
+%lang(en) %{_kdedocdir}/en/kcontrol/cddbretrieval
 
 %files dragon
 %defattr(644,root,root,755)
@@ -318,7 +319,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kscd
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
-%{_datadir}/apps/profiles/kscd.profile.xml
 %{_datadir}/apps/solid/actions/kscd-play-audiocd.desktop
 %{_datadir}/apps/kscd
 %{_iconsdir}/hicolor/*/apps/kscd.png
@@ -329,6 +329,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/mplayerthumbsconfig
 %attr(755,root,root) %{_libdir}/kde4/videopreview.so
+%attr(755,root,root) %{_libdir}/kde4/ffmpegthumbs.so
 %{_datadir}/apps/videothumbnail
 %{_datadir}/config.kcfg/mplayerthumbs.kcfg
 %{_datadir}/kde4/services/videopreview.desktop
+%{_datadir}/kde4/services/ffmpegthumbs.desktop
