@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.4.5
+Version:	4.5.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	00511c7efe14c7d0e89e2728f29201ef
+# Source0-md5:	1d59380e33771bfaf511162a57555143
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
@@ -27,7 +27,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libvorbis-devel
-BuildRequires:	phonon-devel >= 4.3.80
+BuildRequires:	phonon-devel >= 4.4.1
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
 BuildRequires:	qt4-build >= %{qtver}
@@ -191,6 +191,17 @@ Requires:	mplayer
 MPlayerThumbs is a video thumbnail generator for KDE file managers
 (Konqueror, Dolphin, ...) , now available also for KDE 4.
 
+%package ffmpegthumbs
+Summary:	Video thumbnail generator for KDE
+Summary(pl.UTF-8):	Generator podglądów video dla KDE
+Group:		X11/Applications
+Requires:	kde4-kdebase >= %{version}
+Requires:	ffmpeg
+
+%description ffmpegthumbs
+FFMpegThumbs is a video thumbnail generator for KDE file managers
+(Konqueror, Dolphin, ...) , now available also for KDE 4.
+
 %prep
 %setup -q -n %{orgname}-%{version}
 
@@ -318,7 +329,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kscd
 %{_desktopdir}/kde4/kscd.desktop
 %{_datadir}/config.kcfg/kscd.kcfg
-%{_datadir}/apps/profiles/kscd.profile.xml
 %{_datadir}/apps/solid/actions/kscd-play-audiocd.desktop
 %{_datadir}/apps/kscd
 %{_iconsdir}/hicolor/*/apps/kscd.png
@@ -332,3 +342,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/videothumbnail
 %{_datadir}/config.kcfg/mplayerthumbs.kcfg
 %{_datadir}/kde4/services/videopreview.desktop
+
+%files ffmpegthumbs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/kde4/ffmpegthumbs.so
+%{_datadir}/kde4/services/ffmpegthumbs.desktop
