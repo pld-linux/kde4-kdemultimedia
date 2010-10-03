@@ -1,17 +1,17 @@
 %define		_state		stable
 %define		orgname		kdemultimedia
-%define		qtver		4.6.3
+%define		qtver		4.7.0
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.5.1
+Version:	4.5.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	906f62dca51234f2ea056e30f4854da9
+# Source0-md5:	63613acce56cbc393588f7b2d15e758b
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
