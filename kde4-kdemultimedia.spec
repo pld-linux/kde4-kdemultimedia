@@ -1,6 +1,6 @@
 %define		_state		stable
 %define		orgname		kdemultimedia
-%define		qtver		4.7.0
+%define		qtver		4.7.1
 %define		taglib_ver	1.5
 
 Summary:	K Desktop Environment - multimedia applications
@@ -33,7 +33,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	taglib-devel >= %{taglib_ver}
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	xorg-lib-libXpm-devel
@@ -210,12 +210,6 @@ FFMpegThumbs is a video thumbnail generator for KDE file managers
 install -d build
 cd build
 %cmake \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DLIB_INSTALL_DIR=%{_libdir} \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-%if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64 \
-%endif
 	../
 
 %{__make}
