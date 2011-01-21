@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.5.5
+Version:	4.6.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	968947d44a1bfdbce9732008ee63ebca
+# Source0-md5:	e9e4934877ae1eafee06d09e8a95d189
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
@@ -310,10 +310,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kmixctrl
 %attr(755,root,root) %{_libdir}/libkdeinit4_kmix.so
 %attr(755,root,root) %{_libdir}/libkdeinit4_kmixctrl.so
+%attr(755,root,root) %{_libdir}/kde4/kded_kmixd.so
 %{_datadir}/apps/kmix
 %{_datadir}/autostart/restore_kmix_volumes.desktop
 %{_datadir}/autostart/kmix_autostart.desktop
 %{_datadir}/kde4/services/kmixctrl_restore.desktop
+%{_datadir}/kde4/services/kded/kmixd.desktop
 %{_desktopdir}/kde4/kmix.desktop
 %{_iconsdir}/*/*/*/kmix.png
 %{_datadir}/dbus-1/interfaces/org.kde.KMix.xml
