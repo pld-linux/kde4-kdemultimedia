@@ -22,7 +22,7 @@ BuildRequires:	ffmpeg-devel
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	libmusicbrainz-devel >= 1:2.1.1
+BuildRequires:	libmusicbrainz3-devel >= 1:3.0.0
 BuildRequires:	libogg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
