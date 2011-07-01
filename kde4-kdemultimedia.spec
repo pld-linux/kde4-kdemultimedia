@@ -12,13 +12,14 @@ License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	7198fc277b1b98920c0e970a23559e53
+Patch0:		%{name}-ffmpeg.patch
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cdparanoia-III-devel
 BuildRequires:	cmake >= 2.8.0
-BuildRequires:	ffmpeg-devel
+BuildRequires:	ffmpeg-devel >= 0.8
 BuildRequires:	flac-devel >= 1.1.2
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
@@ -197,7 +198,7 @@ Summary:	Video thumbnail generator for KDE
 Summary(pl.UTF-8):	Generator podglądów video dla KDE
 Group:		X11/Applications
 Requires:	kde4-kdebase >= %{version}
-Requires:	ffmpeg
+Requires:	ffmpeg >= 0.8
 
 %description ffmpegthumbs
 FFMpegThumbs is a video thumbnail generator for KDE file managers
@@ -205,6 +206,7 @@ FFMpegThumbs is a video thumbnail generator for KDE file managers
 
 %prep
 %setup -q -n %{orgname}-%{version}
+%patch0 -p1
 
 %build
 install -d build
