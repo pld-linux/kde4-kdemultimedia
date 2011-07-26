@@ -6,13 +6,12 @@
 Summary:	K Desktop Environment - multimedia applications
 Summary(pl.UTF-8):	K Desktop Environment - aplikacje multimedialne
 Name:		kde4-kdemultimedia
-Version:	4.6.5
-Release:	4
+Version:	4.7.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	7198fc277b1b98920c0e970a23559e53
-Patch0:		%{name}-ffmpeg.patch
+# Source0-md5:	99ffa5e4f7b62cb67f53c97dbe21265d
 BuildRequires:	Qt3Support-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
@@ -206,7 +205,6 @@ FFMpegThumbs is a video thumbnail generator for KDE file managers
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p1
 
 %build
 install -d build
@@ -313,14 +311,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdeinit4_kmix.so
 %attr(755,root,root) %{_libdir}/libkdeinit4_kmixctrl.so
 %attr(755,root,root) %{_libdir}/kde4/kded_kmixd.so
+%attr(755,root,root) %{_libdir}/kde4/plasma_engine_mixer.so
 %{_datadir}/apps/kmix
+%{_datadir}/apps/plasma/services/mixer.operations
 %{_datadir}/autostart/restore_kmix_volumes.desktop
 %{_datadir}/autostart/kmix_autostart.desktop
 %{_datadir}/kde4/services/kmixctrl_restore.desktop
 %{_datadir}/kde4/services/kded/kmixd.desktop
+%{_datadir}/kde4/services/plasma-engine-mixer.desktop
 %{_desktopdir}/kde4/kmix.desktop
 %{_iconsdir}/*/*/*/kmix.png
-%{_datadir}/dbus-1/interfaces/org.kde.KMix.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kmix.*.xml
 
 %files kscd
 # -f kscd.lang
